@@ -8,7 +8,7 @@ function enableAudioStream() {
     serverConfig.webserver.webserverPort = Number(serverConfig.webserver.webserverPort);
 
     const flags = `-fflags +nobuffer+flush_packets -flags low_delay -rtbufsize 6192 -probesize 32`;
-    const codec = `-acodec pcm_s16le -ar 48000 -ac ${serverConfig.audio.audioChannels}`;
+    const codec = `-acodec pcm_s16le -ar 90000 -ac ${serverConfig.audio.audioChannels}`;
     const output = `-f s16le -fflags +nobuffer+flush_packets -packetsize 384 -flush_packets 1 -bufsize 960`;
 
     if (process.platform === 'win32') {
